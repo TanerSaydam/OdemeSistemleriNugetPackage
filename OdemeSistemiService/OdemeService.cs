@@ -24,6 +24,13 @@ namespace OdemeSistemiService
     {
         public static Payment IyzicoOdeme(RequestIyzico requestIyzico)
         {
+            Options options = new()
+            {
+                ApiKey = "sandbox-afXhZPW0MQlE4dCUUlHcEopnMBgXnAZI",
+                BaseUrl = "https://sandbox-api.iyzipay.com",
+                SecretKey = "sandbox-wbwpzKIiplZxI3hh5ALI4FJyAcZKL6kq"
+            };
+
             CreatePaymentRequest request = new CreatePaymentRequest();
             request.Locale = Locale.TR.ToString();
             request.ConversationId = "123456789";
@@ -105,12 +112,7 @@ namespace OdemeSistemiService
             basketItems.Add(thirdBasketItem);
             request.BasketItems = basketItems;
 
-            Options options = new()
-            {
-                ApiKey = "sandbox-afXhZPW0MQlE4dCUUlHcEopnMBgXnAZI",
-                BaseUrl = "https://sandbox-api.iyzipay.com",
-                SecretKey = "sandbox-wbwpzKIiplZxI3hh5ALI4FJyAcZKL6kq"
-            };
+            
 
             Payment payment = Payment.Create(request, options);
             return payment;
