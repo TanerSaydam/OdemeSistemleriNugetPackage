@@ -120,16 +120,21 @@ namespace OdemeSistemiService
         {
 
         }        
+        
+        public static void Paynet() { }
 
-        public static void BrainTree()
-        {
+        public static void Paratika() { }
 
-        }
+        public static void Payoneer() { }
 
         public static void TokenPay()
         {
 
         }
+
+        public static void Wise() { }
+
+        public static void IPara() { }
 
         public static void PayU()
         {
